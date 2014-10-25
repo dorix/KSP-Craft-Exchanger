@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Pixel-KSP';
+  src: url('Pixel-UniCode.ttf');
+}
+@font-face {
+  font-family: 'KSP';
+  src: url('KSP.ttf');
+}
+.item-menu-px
+{
+	font-family: 'Pixel-KSP';
+	font-size: 225%;
+}
+.logo
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-family: 'KSP';
+	font-size: 30px;
+	height: 10000%;
+	color: #E0E0E0;
+	background-color: #090909;
+	width: 100%;
+	text-align: center;
+}
+.logo-marge
+{
+	margin-top: 10px;
+}
+ul
+{
+    list-style-type: none;
+}
+.menu
+{
+	float: left;
+	position: fixed;
+	background-color: #252525;
+	color: #F0F0F0;
+	margin-top: 7%;
+	height: 100%;
+	width: 16.66%;
+	background-repeat: repeat-y
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+section
+{
+	padding-left: 17.5%;
+	padding-right: 1%;
+}
+a.lien-menu
+{
+	color: #F0F0F0;
+	transition: 0.5s;
+}
+a.lien-menu:hover
+{
+	color: #F00000;
+	padding-left: 10px;
+	transition: 0.5s;
+	text-decoration: blink;
+}
+a.publ
+{
+	color: #F0F0F0;
+	transition: 0.5s;
+}
+a.publ:hover
+{
+	color: #80F080;
+	padding-left: 10px;
+	transition: 0.5s;
+	text-decoration: blink;
+}
+a.accu
+{
+	color: #F0F0F0;
+	transition: 0.5s;
+}
+a.accu:hover
+{
+	color: #8080F0;
+	padding-left: 10px;
+	transition: 0.5s;
+	text-decoration: blink;
+}
+.aligne
+{
+	vertical-align: middle;
+}
+.ksp-font
+{
+	font-family: Pixel-KSP;
+	font-size: 140%;
+}
+select
+{
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td
+{
+    border: 1px solid black;
+	margin: 2px;
+}
+.imgcell
+{
+	width: 5%;
+}
