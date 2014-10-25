@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="ANSI" />
+        <meta charset="UTF-8" />
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" href="style.css" />
 		<script src="bootstrap/js/jquery-2.1.1.min.js"></script>

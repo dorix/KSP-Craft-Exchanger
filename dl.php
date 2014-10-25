@@ -14,7 +14,7 @@ if(isset($_SESSION['Utilisateur']) && isset($_GET['categ']))
 	$req = $bdd->prepare('SELECT * FROM publications WHERE Categ = ?');
 	$req->execute(array($_GET['categ']));
 	echo('<p><div class="table-responsive"><table class="table table-hover table-bordered">
-	<thead><tr><th>Image</th><th>Nom</th><th>Auteur</th><th>Prix</th><th>Descritption</th><th>Lien de téléchargement</th></tr></thead><tbody>');
+	<thead><tr><th>Image</th><th>Nom</th><th>Auteur</th><th>Prix</th><th>Descritption</th><th>Lien de tÃ©lÃ©chargement</th></tr></thead><tbody>');
 	while($data = $req->fetch())
 	{
 		echo('<tr><td class="imgcell"><img src="publications/'.$data['Nom'].'.'.$data['ImgExt'].'" class="img-circle img-responsive"></td>'.

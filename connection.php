@@ -1,6 +1,6 @@
 <?php include('fixe.php'); ?>
 		<section class="col-xs-10" role="form">
-        <h1>Connection</h1>
+        <h1>Connexion</h1>
 		<form class="form-horizontal" role="form" method="POST" action="connection.php">
 			<div class="form-group">
 				<label for="Pseudo" class="col-sm-2 control-label">Pseudo</label>
@@ -37,7 +37,7 @@
 					{
 					$_SESSION['Utilisateur'] = $data['Pseudo'];
 					$_SESSION['Fonds'] = $data['Funds'];
-					echo('<div class="alert alert-success col-sm-5" role="alert"><h1>Connecté</h1><p>Vous êtes connecté</p></div>');
+					echo('<div class="alert alert-success col-sm-5" role="alert"><h1>ConnectÃ©</h1><p>Vous Ã©tes connectÃ©</p></div>');
 					echo('<script language="javascript" type="text/javascript">
 					<!--
 					window.location.replace("index.php");

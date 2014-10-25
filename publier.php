@@ -4,7 +4,7 @@
 		echo('
 		<section class="col-xs-10">
 			<h1>Publier</h1>
-			<p>Publiez votre création et récoltez des fonds !</p>
+			<p>Publiez votre crÃ©ation et rÃ©coltez des fonds !</p>
 			<form class="form-horizontal" role="form" action="upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="Name" class="col-sm-3 control-label">Nom : </label>
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="categ" class="col-sm-3 control-label">Catégorie : </label>
+					<label for="categ" class="col-sm-3 control-label">CatÃ©gorie : </label>
 					<div class="col-sm-3">
 						<select name="categ" id="categ" required>
 							<option value="Lanceurs">Lanceurs</option>

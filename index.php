@@ -2,10 +2,10 @@
 		<section class="col-xs-10">
         <h1>KSP Craft Exchanger</h1>
         
-        <p>Bonjour et bienvenue sur la plateforme d'échange de craft KSP Craft Exchanger.</p>
-        <p>Ce site deviendra, à terme, une plateforme d'échange de craft pour KSP.</br>
-		Vous pourrez envoyer des crafts, les télécharger, avec vos fonds de KSP glanés en mode carrière ou en vendant des crafts contre des fonds.</p>
-		<p><em>Dès maintenant</em>, inscrivez-vous sur KSP Craft Exchanger et ayez à votre dispositions tous les fichiers craft de notre communauté.</p>
+        <p>Bonjour et bienvenue sur la plateforme d'Ã©change de craft KSP Craft Exchanger.</p>
+        <p>Ce site deviendra, Ã  terme, une plateforme d'Ã©change de craft pour KSP.</br>
+		Vous pourrez envoyer des crafts, les tÃ©lÃ©charger, avec vos fonds de KSP glanÃ©s en mode carriÃ¨re ou en vendant des crafts contre des fonds.</p>
+		<p><em>DÃ¨s maintenant</em>, inscrivez-vous sur KSP Craft Exchanger et ayez Ã  votre dispositions tous les fichiers craft de notre communautÃ©.</p>
 		<?php
 		if(isset($_SESSION['Utilisateur']) == 0)
 		{ echo('

@@ -2,7 +2,7 @@
 echo('<section class="col-xs-10">');
 if(isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && isset($_POST['categ']) && isset($_FILES['craft']) && isset($_FILES['image']) && $_FILES['craft']['error'] == 0 && $_FILES['image']['error'] == 0)
 {
-	$nom = strip_tags($_POST['Name']); // Définition des variables
+	$nom = strip_tags($_POST['Name']); // DÃ©finition des variables
 	$prix = $_POST['Prix'];
 	$categ = $_POST['categ'];
 	$desc = strip_tags($_POST['Desc']);
@@ -27,16 +27,16 @@ if(isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && is
 	if($data['Nom'] == '' && in_array($extimg, $autorext) && $extcraft == 'craft')
 	{
 		$req->closeCursor();
-		move_uploaded_file($_FILES['craft']['tmp_name'], 'publications/'.$nom.'.craft'); // On met les fichiers où il faut
+		move_uploaded_file($_FILES['craft']['tmp_name'], 'publications/'.$nom.'.craft'); // On met les fichiers oÃ¹ il faut
 		move_uploaded_file($_FILES['image']['tmp_name'], 'publications/'.$nom.'.'.$extimg);
 		$addc = $bdd->prepare("INSERT INTO publications(ID, Nom, Auteur, Categ, Prix, ImgExt, Descr) VALUES('', ? , ? , ? , ? , ? , ?)"); // On ajoute tout ça dans la BDD
 		$addc->execute(array($nom,$_SESSION['Utilisateur'],$categ,$prix,$extimg,$desc));
-		echo('<p>Création ajoutée à notre catalogue.</p>');
+		echo('<p>CrÃ©ation ajoutÃ©e Ã  notre catalogue.</p>');
 	}
 	else
 	{
 		$req->closeCursor();
-		echo('<p><h1>Oups</h1> Il y a eu une erreur dans l\'envoi de vos fichiers. Véfifier le nom de votre création et les extentsions de vos fichiers. Nous précisons que nous ne prenons en charge que les extensions d\'images suivantes : jpeg, jpg, gif et png. Il est aussi possible que le nom que vous ayez choisi soit déja pris.</p>');
+		echo('<p><h1>Oups</h1> Il y a eu une erreur dans l\'envoi de vos fichiers. VÃ©fifiez le nom de votre crÃ©ation et les extentsions de vos fichiers. Nous prÃ©cisons que nous ne prenons en charge que les extensions d\'images suivantes : jpeg, jpg, gif et png. Il est aussi possible que le nom que vous ayez choisi soit dÃ©ja pris.</p>');
 	}
 }
 echo('</section>');

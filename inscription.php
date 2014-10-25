@@ -1,7 +1,7 @@
 <?php include('fixe.php'); ?>
 		<section class="col-xs-10" role="form">
         <h1>Inscription</h1>
-		<p>Inscrivez-vous dès maintenant sur notre plateforme via ce formulaire et profitez dès a présent de tous les crafts disponibles sur notre plateforme.</p>
+		<p>Inscrivez-vous dÃ¨s maintenant sur notre plateforme via ce formulaire et profitez dÃ¨s a prÃ©sent de tous les crafts disponibles sur notre plateforme.</p>
 		<form class="form-horizontal" role="form" method="POST" action="inscription.php">
 			<div class="form-group">
 				<label for="Pseudo" class="col-sm-3 control-label">Pseudo</label>
@@ -48,7 +48,7 @@
 						$addm = $bdd->prepare("INSERT INTO membres(ID, Pseudo, Password,Funds,Idtrans,Nbrtrans) VALUES('', ? , ? ,'0','1','0')");
 						$addm->execute(array($pseudo,$password));
 						echo('<div class="alert alert-success col-sm-5" role="alert"><h1>Bienvenue !</h1>
-						<p>Vous êtes maintenant inscrit sur notre plateforme. Que diriez vous d\'aller regarder les créations de nos membres ?</p>
+						<p>Vous Ãªtes maintenant inscrit sur notre plateforme. Que diriez vous d\'aller regarder les crÃ©ations de nos membres ?</p>
 						</div>');
 						}
 				}
