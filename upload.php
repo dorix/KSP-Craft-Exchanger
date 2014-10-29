@@ -1,8 +1,11 @@
 <?php include('fixe.php');
 echo('<section class="col-xs-10">');
-if(isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && isset($_POST['categ']) && isset($_FILES['craft']) && isset($_FILES['image']) && $_FILES['craft']['error'] == 0 && $_FILES['image']['error'] == 0)
+if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && isset($_POST['categ']) && isset($_FILES['craft']) && isset($_FILES['image']) && $_FILES['craft']['error'] == 0 && $_FILES['image']['error'] == 0)
 {
-	$nom = strip_tags($_POST['Name']); // Définition des variables
+	$nom = strip_tags($_POST['Name']); // Definition des variables
+	$MDP = strip_tags($_POST['MDP']);
+	$MOD = $_POST['MOD'];
+	$SUB = $_POST['SUB'];
 	$prix = $_POST['Prix'];
 	$categ = $_POST['categ'];
 	$desc = strip_tags($_POST['Desc']);
@@ -14,7 +17,7 @@ if(isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && is
 	 // Verification sur la bdd
 	try
 	{
-		$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc');
+		$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
 	}
 	catch (Exception $e)
 	{
@@ -27,11 +30,14 @@ if(isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && is
 	if($data['Nom'] == '' && in_array($extimg, $autorext) && $extcraft == 'craft')
 	{
 		$req->closeCursor();
-		move_uploaded_file($_FILES['craft']['tmp_name'], 'publications/'.$nom.'.craft'); // On met les fichiers où il faut
+		move_uploaded_file($_FILES['craft']['tmp_name'], 'publications/'.$nom.'.craft'); // On met les fichiers ou il faut
 		move_uploaded_file($_FILES['image']['tmp_name'], 'publications/'.$nom.'.'.$extimg);
-		$addc = $bdd->prepare("INSERT INTO publications(ID, Nom, Auteur, Categ, Prix, ImgExt, Descr) VALUES('', ? , ? , ? , ? , ? , ?)"); // On ajoute tout �a dans la BDD
-		$addc->execute(array($nom,$_SESSION['Utilisateur'],$categ,$prix,$extimg,$desc));
-		echo('<p>Création ajoutée à notre catalogue.</p>');
+		$addc = $bdd->prepare("INSERT INTO publications(ID, Nom, Auteur, Categ, Prix, ImgExt, Descr, MDP, MODV, SUB) VALUES('', ? , ? , ? , ? , ? , ? , ? , ? , ? )"); // On ajoute tout ca dans la BDD
+		$addc->execute(array($nom,$_SESSION['Utilisateur'],$categ,$prix,$extimg,$desc,$MDP,$MOD,$SUB));
+		$req2 = $bdd->prepare('SELECT * FROM publications WHERE Nom = ?');
+		$req2->execute(array($nom));
+		$data2 = $req2->fetch();
+		echo('<h2>Création ajoutée à notre catalogue.</h2><p>Le lien public de téléchargement sans compte est : http://kspce.olympe.in/dlnomember?ID='.$data2['ID'].'&ampMDP='.$data2['MDP'].'</p>');
 	}
 	else
 	{

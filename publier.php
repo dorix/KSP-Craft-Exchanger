@@ -28,8 +28,28 @@
 							<option value="Rovers">Rovers</option>
 							<option value="Satellites">Satellites</option>
 							<option value="Vaisseaux">Vaisseaux</option>
+							<option value="Stations">Stations</option>
+							<option value="Bases">Bases</option>
 							<option value="Avions">Avions</option>
 							<option value="Inclassables">Inclassables</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="SUB" class="col-sm-3 control-label">Type : </label>
+					<div class="col-sm-3">
+						<select name="SUB" id="SUB" required>
+							<option value="Vaisseau">Vaisseau</option>
+							<option value="Subassemblie">Subassemblie</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="MOD" class="col-sm-3 control-label">Moddé/Vanilla : </label>
+					<div class="col-sm-3">
+						<select name="MOD" id="MOD" required>
+							<option value="Vanilla">Vanilla</option>
+							<option value="Moddé">Moddé</option>
 						</select>
 					</div>
 				</div>
@@ -37,6 +57,12 @@
 					<label for="Desc" class="col-sm-3 control-label">Description : </label>
 					<div class="col-sm-5">
 						<textarea class="form-control" name="Desc" id="Desc" required></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="MDP" class="col-sm-3 control-label">Mot de passe de gratuité : </label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" name="MDP" id="MDP" required/>
 					</div>
 				</div>
 				<div class="form-group">

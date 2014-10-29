@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['Utilisateur']) && isset($_GET['ID']) && isset($_SESSION['Fonds']))
+if(isset($_GET['ID']) && isset($_GET['MDP']))
 {
 	try
 	{
@@ -14,15 +14,9 @@ if(isset($_SESSION['Utilisateur']) && isset($_GET['ID']) && isset($_SESSION['Fon
 	$req = $bdd->prepare('SELECT * FROM publications WHERE ID = ?');
 	$req->execute(array($_GET['ID']));
 	$data = $req->fetch();
-	if($_SESSION['Fonds'] >= $data['Prix'])
+	if($_GET['MDP'] == $data['MDP'])
 	{
 		$req->closeCursor();
-		$finalfunds = $_SESSION['Fonds'] - $data['Prix'];
-		$_SESSION['Fonds'] = $finalfunds;
-		$update = $bdd->prepare('UPDATE membres SET Funds = ? WHERE Pseudo = ?');
-		$update->execute(array($finalfunds, $_SESSION['Utilisateur']));
-		$giveto = $bdd->prepare('UPDATE membres SET Funds = Funds+? WHERE Pseudo = ?');
-		$giveto->execute(array($data['Prix'], $data['Auteur']));
 		$size = filesize('./publications/'.$data['Nom'].'.craft');
 		session_write_close();
 		header("Cache-Control: no-cache, must-revalidate");

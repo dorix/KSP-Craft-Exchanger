@@ -17,7 +17,7 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-1">
 					<input type="hidden" name="con" value="1"/>
-					<button type="submit" class="btn btn-primary" name="connect" id="inscr">Connection</button>
+					<button type="submit" class="btn btn-primary" name="connect" id="inscr">Connexion</button>
 				</div>
 			</div>
 		</form>
@@ -28,7 +28,7 @@
 			{
 				$pseudo = $_POST['Pseudo'];
 				$password = md5($_POST['MDP']);
-				$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc');
+				$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
 					$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					$req = $bdd->prepare('SELECT * FROM membres WHERE Pseudo = ?');
 					$req->execute(array($pseudo));
