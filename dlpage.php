@@ -37,6 +37,6 @@ if(isset($_SESSION['Utilisateur']) && isset($_GET['ID']) && isset($_SESSION['Fon
 	}
 	else
 	{
-		echo('<h1> Désolé, mais vous n\'avez pas assez de fond</h1>');
+		echo('<h1> Désolé, mais vous n\'avez pas assez de fonds</h1>');
 	}
 } ?>
