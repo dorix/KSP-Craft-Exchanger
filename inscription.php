@@ -45,7 +45,7 @@
 						if($data['Pseudo'] == '')
 						{
 						$req->closeCursor();
-						$addm = $bdd->prepare("INSERT INTO membres(ID, Pseudo, Password,Funds,Idtrans,Nbrtrans) VALUES('', ? , ? ,'0','1','0')");
+						$addm = $bdd->prepare("INSERT INTO membres(ID, Pseudo, Password,Funds,Idtrans,Nbrtrans) VALUES('', ? , ? ,'5000','1','0')");
 						$addm->execute(array($pseudo,$password));
 						echo('<div class="alert alert-success col-sm-5" role="alert"><h1>Bienvenue !</h1>
 						<p>Vous êtes maintenant inscrit sur notre plateforme. Que diriez vous d\'aller regarder les créations de nos membres ?</p>
