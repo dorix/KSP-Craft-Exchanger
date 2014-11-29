@@ -6,6 +6,10 @@
   font-family: 'KSP';
   src: url('KSP.ttf');
 }
+div, p
+{ 
+	word-wrap: break-word;
+}
 .item-menu-px
 {
 	font-family: 'Pixel-KSP';
@@ -92,6 +96,17 @@ a.accu:hover
 	transition: 0.5s;
 	text-decoration: blink;
 }
+a
+{
+	color: #050505;
+	transition: 0.5s;
+}
+a:hover
+{
+	color: #F00000;
+	transition: 0.5s;
+	text-decoration: blink;
+}
 .aligne
 {
 	vertical-align: middle;
@@ -117,7 +132,7 @@ td
 }
 .imgcell
 {
-	width: 7%;
+	width: 10%;
 }
 img
 {
@@ -128,3 +143,4 @@ img
 	padding-right: 5%;
 	margin-right: 5%;
 }
+.yolo
