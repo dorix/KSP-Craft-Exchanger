@@ -6,7 +6,7 @@ if(isset($_GET['ID']))
 	if($_SESSION['Utilisateur']) != 0)
 	{
 		$type = 'a';
-		$desactive = ''
+		$desactive = '';
 	}
 	else
 	{
