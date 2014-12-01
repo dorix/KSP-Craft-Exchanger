@@ -39,7 +39,7 @@
 					<img src="publications/'.$data['Nom'].'.'.$data['ImgExt'].'" alt="'.$data['Nom'].'">
 					<div class="carousel-caption">
 						<h3>'.$data['Nom'].'</h3>
-						<a class="btn btn-primary" href="dl.php?ID='.$data['ID'].'">Fiche</a>
+						<a class="btn btn-primary" href="fiche.php?ID='.$data['ID'].'">Fiche</a>
 					</div>
 				</div>');
 			$i = i + 1;
