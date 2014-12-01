@@ -22,7 +22,7 @@
 		}
 		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$reponse = $bdd->query('SELECT * FROM publications ORDER BY ID DESC LIMIT 0,5');
-		echo('<div class="row col-sm-6"><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		echo('<div class="col-sm-6"><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner" role="listbox">');
 		$i = 0;
 		while ($data = $reponse->fetch())
