@@ -9,8 +9,10 @@
 		<?php
 		if(isset($_SESSION['Utilisateur']) == 0)
 		{ echo('
+		<p>
 		<a href="inscription.php"><button class="btn btn-primary">Inscrivez-vous</button></a> 
 		<a href="connection.php"><button class="btn btn-danger">Connectez-vous</button></a>
+		</p>
 		');}
 		try
 		{
@@ -22,7 +24,7 @@
 		}
 		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$reponse = $bdd->query('SELECT * FROM publications ORDER BY ID DESC LIMIT 0,5');
-		echo('<div class="col-sm-6"><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		echo('<div class="col-sm-9"><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner" role="listbox">');
 		$i = 0;
 		while ($data = $reponse->fetch())
