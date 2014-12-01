@@ -23,7 +23,6 @@
 		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$reponse = $bdd->query('SELECT * FROM publications ORDER BY ID DESC LIMIT 0,5');
 		echo('<div id="carousel-example-generic" class="CAROUSEL slide" data-ride="CAROUSEL">
-		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">');
 		$i = 0;
 		while ($data = $reponse->fetch())
@@ -43,9 +42,9 @@
 						<a class="btn btn-primary" href="dl.php?ID='.$data['ID'].'">Fiche</a>
 					</div>
 				</div>');
+			$i = i + 1;
 		}
 		echo('</div>
-		<!-- Controls -->
 		<a class="left CAROUSEL-control" href="#CAROUSEL-example-generic" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
