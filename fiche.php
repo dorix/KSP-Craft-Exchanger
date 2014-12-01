@@ -3,7 +3,7 @@ include('fixe.php');
 echo('<section class="col-xs-10">');
 if(isset($_GET['ID']))
 {
-	if($_SESSION['Utilisateur'] != 0)
+	if(isset($_SESSION['Utilisateur']))
 	{
 		$type = 'a';
 		$desactive = '';
