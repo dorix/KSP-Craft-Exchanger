@@ -8,6 +8,7 @@
 		<script src="bootstrap/js/jquery-2.1.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap.js"></script>
         <title>KSP craft exchanger</title>
+		<meta name="google-site-verification" content="FtVGZDKKOgRibEVbSdlDaQ8zGCWyGzwOiEsYTmpM7Uk" />
     </head>
 
     <body>
