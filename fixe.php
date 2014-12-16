@@ -5,6 +5,7 @@
         <meta charset="UTF-8" />
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" href="style.css" />
+		<link rel="alternate" href="kspce.olympe.in" hreflang="fr-fr" />
 		<script src="bootstrap/js/jquery-2.1.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap.js"></script>
         <title>KSP craft exchanger</title>
