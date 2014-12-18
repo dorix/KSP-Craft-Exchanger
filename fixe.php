@@ -19,11 +19,8 @@
 			<li></br></li>
 			<li></br></li>
 			<li><a class="accu" href="index.php">Accueil</a></li>
-			<?php
-			if(isset($_SESSION['Utilisateur']) && $_SESSION['Utilisateur'] != '')
-			{
-			echo('
-			<li><a class="publ" href="publier.php">Publier</a></li>
+			<?php if(isset($_SESSION['Utilisateur']) && $_SESSION['Utilisateur'] != '')
+			{echo('<li><a class="publ" href="publier.php">Publier</a></li>');} ?>
 			<li></br></li>
 			<li><a class="lien-menu" href="dl.php?categ=Rovers">Rovers</a></li>
 			<li><a class="lien-menu" href="dl.php?categ=Avions">Avions</a></li>
@@ -35,7 +32,10 @@
 			<li><a class="lien-menu" href="dl.php?categ=Bases">Bases</a></li>
 			<li><a class="lien-menu" href="dl.php?categ=Navettes">Navettes</a></li>
 			<li><a class="lien-menu" href="dl.php?categ=Inclassables">Inclassables</a></li>
-			<li></br></li>
+			<?php
+			if(isset($_SESSION['Utilisateur']) && $_SESSION['Utilisateur'] != '')
+			{
+			echo('<li></br></li>
 			<div style=" font-size: 95%;"><strong>Fonds : </strong>'. $_SESSION['Fonds'] .'</div>
 			');
 			}
