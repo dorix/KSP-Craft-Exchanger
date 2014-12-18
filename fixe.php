@@ -8,7 +8,7 @@
 		<link rel="alternate" href="kspce.olympe.in" hreflang="fr-fr" />
 		<script src="bootstrap/js/jquery-2.1.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap.js"></script>
-        <title>KSP craft exchanger</title>
+        <title>KSP craft exchanger - Site d'échange de craft KSP communautaire - <?php echo($_SERVER['PHP_SELF']); ?></title>
 		<meta name="google-site-verification" content="FtVGZDKKOgRibEVbSdlDaQ8zGCWyGzwOiEsYTmpM7Uk" />
     </head>
 
