@@ -5,7 +5,8 @@
         <p>Bonjour et bienvenue sur la plateforme d'échange de craft KSP Craft Exchanger.</p>
         <p>Ce site deviendra, à terme, une plateforme d'échange de craft pour KSP.</br>
 		Vous pourrez envoyer des crafts, les télécharger, avec vos fonds de KSP glanés en mode carrière ou en vendant des crafts contre des fonds.</p>
-		<p><em>Dès maintenant</em>, inscrivez-vous sur KSP Craft Exchanger et ayez à votre dispositions tous les fichiers craft de notre communauté.</p>
+		<p><em>Dès maintenant</em>, inscrivez-vous sur KSP Craft Exchanger et ayez à votre dispositions tous les fichiers craft de notre communauté. <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kspce.olympe.in/" data-text="Site d'échange de craft communautaire" data-via="KSPCraftE" data-lang="fr" data-count="none" data-hashtags="KSPCE">Tweeter</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
 		<?php
 		if(isset($_SESSION['Utilisateur']) == 0)
 		{ echo('
