@@ -17,19 +17,31 @@ div, p
 }
 .logo
 {
-	float: left;
-	position: fixed;
 	font-family: 'KSP';
 	font-size: 30px;
-	background-repeat: repeat-y;
-	color: #E0E0E0;
-	width: 16.66%;
-	background-color: #090909;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.logoimg
+{
+	width: 60px;
+	margin-top: -10px;
 }
 .logo-marge
 {
 	margin-top: 10px;
+}
+.titlebar
+{
+	color: #E0E0E0;
+	background-color: #050505;
+}
+.titlebox
+{
+	width: 440px;
+	margin-left: auto;
+	margin-right: auto;
 }
 ul
 {
@@ -39,7 +51,7 @@ ul
 {
 	float: left;
 	position: fixed;
-	background-color: #252525;
+	background-color: #303030;
 	color: #F0F0F0;
 	height: 100%;
 	width: 16.66%;
@@ -143,4 +155,3 @@ img
 	padding-right: 5%;
 	margin-right: 5%;
 }
-.yolo

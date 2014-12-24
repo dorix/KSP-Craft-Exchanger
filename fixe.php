@@ -13,10 +13,10 @@
     </head>
 
     <body>
+		<div class="titlebar"><div class="titlebox"><img class="logoimg" src="logo2.svg"/><strong class="logo">KSP Craft Exchanger</strong></div></div>
 		<nav class="menu item-menu-px">
-		<strong class="logo">KSP Craft Exchanger</strong>
+		
 		<ul>
-			<li></br></li>
 			<li></br></li>
 			<li><a class="accu" href="index.php">Accueil</a></li>
 			<?php if(isset($_SESSION['Utilisateur']) && $_SESSION['Utilisateur'] != '')
