@@ -39,6 +39,7 @@ div, p
 	color: #E0E0E0;
 	background-color: #050505;
 	position: fixed;
+	z-index:10;
 }
 .titlebox
 {
