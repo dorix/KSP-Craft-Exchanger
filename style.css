@@ -55,6 +55,7 @@ ul
 	position: fixed;
 	background-color: #303030;
 	color: #F0F0F0;
+	padding-top: 55px;
 	height: 100%;
 	width: 16.66%;
 	background-repeat: repeat-y
@@ -73,6 +74,7 @@ section
 	margin-left: 17.5%;
 	padding-right: 1%;
 	margin-right: 1%;
+	padding-top: 60px;
 }
 a.lien-menu
 {
