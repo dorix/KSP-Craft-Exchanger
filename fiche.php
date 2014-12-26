@@ -2,10 +2,8 @@
 include('fixe.php');
 include('API.php');
 echo('<section class="col-xs-10">');
-echo('A');
 if(isset($_GET['ID']))
 {
-	echo('B');
 	if(isset($_SESSION['Utilisateur']))
 	{
 		$type = 'a';
@@ -16,9 +14,7 @@ if(isset($_GET['ID']))
 		$type = 'span';
 		$desactive = ' disabled="disabled"';
 	}
-	echo('C');
 	include('BDD.php');
-	echo('D');
 	$CE = new hangar($bdd,'KSP-CE');
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$req = $bdd->prepare('SELECT * FROM publications WHERE ID = ?');
