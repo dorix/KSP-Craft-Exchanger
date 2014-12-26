@@ -2,14 +2,7 @@
 session_start();
 if(isset($_SESSION['Utilisateur']) && isset($_GET['ID']) && isset($_SESSION['Fonds']))
 {
-	try
-	{
-		$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-	}
-	catch (Exception $e)
-	{
-		die('Erreur: '. $e->getMessage());
-	}
+	include('BDD.php');
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$req = $bdd->prepare('SELECT * FROM publications WHERE ID = ?');
 	$req->execute(array($_GET['ID']));
