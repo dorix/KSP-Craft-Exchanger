@@ -62,10 +62,11 @@ if(isset($_GET['ID']))
 			elseif($_SESSION['Utilisateur'] != $data['Auteur'])
 			{
 				$average = $votes->getAverage();
-				if($average == 'Empty'){$average = 0.5;}
+				if($average == 'Empty'){$average = 0.5; $empty = 1;}
+				else{$empty = 0;}
 				$green = $average * 100;
 				$red = 100 - $green;
-				if($average == 'Empty'){
+				if($empty == 1){
 				$votesystem = ' <div class="progress">
 									<div class="progress-bar progress-bar-danger" style="width: '.$green.'%">
 									<a class="up" href="vote.php?ID='.$_GET['ID'].'&Note=1"><span class="glyphicon glyphicon-thumbs-up"></span></a>
