@@ -15,14 +15,7 @@ if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset
 	$extimg = $imginfo['extension'];
 	$autorext = array('jpg','jpeg','gif','png');
 	 // Verification sur la bdd
-	try
-	{
-		$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-	}
-	catch (Exception $e)
-	{
-		die('Erreur: '. $e->getMessage());
-	}
+	include('BDD.php');
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$req = $bdd->prepare('SELECT Nom FROM publications WHERE Nom = ?');
 	$req->execute(array($nom));

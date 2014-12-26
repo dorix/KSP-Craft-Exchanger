@@ -1,13 +1,6 @@
 <?php include('fixe.php');
 echo('<section class="col-xs-10">');
-	try
-	{
-		$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-	}
-	catch (Exception $e)
-	{
-		die('Erreur: '. $e->getMessage());
-	}
+	include('BDD.php');
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	if(isset($_GET['categ']))
 	{

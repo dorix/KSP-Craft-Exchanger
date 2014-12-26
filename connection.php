@@ -28,22 +28,22 @@
 			{
 				$pseudo = $_POST['Pseudo'];
 				$password = md5($_POST['MDP']);
-				$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-					$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					$req = $bdd->prepare('SELECT * FROM membres WHERE Pseudo = ?');
-					$req->execute(array($pseudo));
-					$data = $req->fetch();
-					if($data['Pseudo'] != "" && $data['Password'] == $password)
-					{
+				include('BDD.php');
+				$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$req = $bdd->prepare('SELECT * FROM membres WHERE Pseudo = ?');
+				$req->execute(array($pseudo));
+				$data = $req->fetch();
+				if($data['Pseudo'] != "" && $data['Password'] == $password)
+				{
 					$_SESSION['Utilisateur'] = $data['Pseudo'];
 					$_SESSION['Fonds'] = $data['Funds'];
 					echo('<div class="alert alert-success col-sm-5" role="alert"><h1>Connecté</h1><p>Vous étes connecté</p></div>');
 					echo('<script language="javascript" type="text/javascript">
-					<!--
-					window.location.replace("index.php");
-					-->
-					</script>');
-					}
+						<!--
+						window.location.replace("index.php");
+						-->
+						</script>');
+				}
 			}
 			else
 			{

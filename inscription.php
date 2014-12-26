@@ -37,7 +37,7 @@
 				{
 					$pseudo = $_POST['Pseudo'];
 					$password = md5($_POST['MDP']);
-					$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc');
+					include('BDD.php');
 					$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					$req = $bdd->prepare('SELECT Pseudo FROM membres WHERE Pseudo = ?');
 					$req->execute(array($pseudo));

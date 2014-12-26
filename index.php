@@ -15,14 +15,7 @@
 		<a href="connection.php"><button class="btn btn-danger">Connectez-vous</button></a>
 		</p>
 		');}
-		try
-		{
-			$bdd = new PDO('mysql:host=sql2.olympe.in;dbname=cxo2zffc', 'cxo2zffc', '4msupcqal4cadtjsc', array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-		}
-		catch (Exception $e)
-		{
-			die('Erreur: '. $e->getMessage());
-		}
+		include('BDD.php');
 		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$reponse = $bdd->query('SELECT * FROM publications ORDER BY ID DESC LIMIT 0,5');
 		echo('<div class="col-sm-9"><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
