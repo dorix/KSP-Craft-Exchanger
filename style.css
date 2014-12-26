@@ -78,6 +78,26 @@ section
 	margin-right: 1%;
 	padding-top: 60px;
 }
+a.up
+{
+	color: #F5F5F5;
+	transition: 0.5s;
+}
+a.up:hover
+{
+	color: #00F000;
+	transition: 0.5s;
+}
+a.down
+{
+	color: #F5F5F5;
+	transition: 0.5s;
+}
+a.down:hover
+{
+	color: #F00000;
+	transition: 0.5s;
+}
 a.lien-menu
 {
 	color: #F0F0F0;

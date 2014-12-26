@@ -65,14 +65,26 @@ if(isset($_GET['ID']))
 				if($average == 'Empty'){$average = 0.5;}
 				$green = $average * 100;
 				$red = 100 - $green;
+				if($average == 'Empty'){
 				$votesystem = ' <div class="progress">
 									<div class="progress-bar progress-bar-danger" style="width: '.$green.'%">
-									<a href="vote.php?ID='.$_GET['ID'].'&Note=1"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+									<a class="up" href="vote.php?ID='.$_GET['ID'].'&Note=1"><span class="glyphicon glyphicon-thumbs-up"></span></a>
 									</div>
 									<div class="progress-bar progress-bar-danger" style="width: '.$red.'%">
+									<a class="down" href="vote.php?ID='.$_GET['ID'].'&Note=0"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+									</div>
+								</div>';}
+				else
+				{
+					$votesystem = ' <div class="progress">
+									<div class="progress-bar progress-bar-success" style="width: '.$green.'%">
+									<a href="vote.php?ID='.$_GET['ID'].'&Note=1"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+									</div>
+									<div class="progress-bar progress-bar-primary" style="width: '.$red.'%">
 									<a href="vote.php?ID='.$_GET['ID'].'&Note=0"><span class="glyphicon glyphicon-thumbs-down"></span></a>
 									</div>
 								</div>';
+				}
 			}
 			else{}
 		}
