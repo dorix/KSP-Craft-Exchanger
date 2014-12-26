@@ -30,7 +30,8 @@ if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset
 		$req2 = $bdd->prepare('SELECT * FROM publications WHERE Nom = ?');
 		$req2->execute(array($nom));
 		$data2 = $req2->fetch();
-		echo('<h2>Création ajoutée à notre catalogue.</h2><p>Le lien public de téléchargement sans compte est : http://kspce.olympe.in/dlnomember?ID='.$data2['ID'].'&ampMDP='.$data2['MDP'].'</p>');
+		echo('<h2>Création ajoutée à notre catalogue.</h2><p>Le lien public de téléchargement sans compte est : http://kspce.olympe.in/dlnomember?ID='.$data2['ID'].'&MDP='.$data2['MDP'].'</p>');
+		
 	}
 	else
 	{

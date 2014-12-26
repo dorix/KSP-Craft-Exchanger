@@ -22,10 +22,6 @@ if(isset($_GET['ID']) && isset($_GET['MDP']))
 		header("Content-Length: ".$size);
 		readfile('./publications/'.$data['Nom'].'.craft');
 	}
-	else
-	{
-		echo('<h1> Désolé, mais vous n\'avez pas assez de fond</h1>');
-	}
 }
 else
 {
