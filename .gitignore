@@ -45,3 +45,5 @@ Temporary Items
 
 # Publications : it's useless to keep them on git !
 publications
+tests
+pluginInterface
