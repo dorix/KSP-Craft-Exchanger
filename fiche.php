@@ -79,10 +79,10 @@ if(isset($_GET['ID']))
 				{
 					$votesystem = ' <div class="progress">
 									<div class="progress-bar progress-bar-success" style="width: '.$green.'%">
-									<a href="vote.php?ID='.$_GET['ID'].'&Note=1"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+									<a class="up" href="vote.php?ID='.$_GET['ID'].'&Note=1"><span class="glyphicon glyphicon-thumbs-up"></span></a>
 									</div>
 									<div class="progress-bar progress-bar-primary" style="width: '.$red.'%">
-									<a href="vote.php?ID='.$_GET['ID'].'&Note=0"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+									<a class="down" href="vote.php?ID='.$_GET['ID'].'&Note=0"><span class="glyphicon glyphicon-thumbs-down"></span></a>
 									</div>
 								</div>';
 				}

@@ -66,8 +66,8 @@ class publication // Cette classe sert à gérer les publications.
 		'Modded'=>$this->Modde,
 		'Subassembly'=>$this->Subassembly,
 		'Description'=>$this->Description,
-		'CraftPATH'=>$this->Categorie.'/'.$this->Nom.'.craft',
-		'ImgPATH'=>$this->Categorie.'/'.$this->Nom.'.'.$this->ImgExt
+		'CraftPATH'=>$this->Nom.'.craft',
+		'ImgPATH'=>$this->Nom.'.'.$this->ImgExt
 		);
 	}
 	
