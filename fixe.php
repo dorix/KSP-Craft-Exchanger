@@ -10,11 +10,13 @@
 		<script src="bootstrap/js/bootstrap.js"></script>
         <title>KSP craft exchanger - Site d'échange de craft KSP communautaire - <?php echo($_SERVER['PHP_SELF']); ?></title>
 		<meta name="google-site-verification" content="FtVGZDKKOgRibEVbSdlDaQ8zGCWyGzwOiEsYTmpM7Uk" />
+		<script src="snap.js"></script>
+		<script src="modernizr.js"></script>
     </head>
 
     <body>
 		<div class="titlebar"><div class="titlebox"><img class="logoimg" src="logo2.svg"/><strong class="logo">KSP Craft Exchanger</strong></div></div>
-		<nav class="menu item-menu-px">
+		<nav  id="content" class="menu item-menu-px">
 		
 		<ul>
 			<li></br></li>
@@ -39,6 +41,14 @@
 			<div style=" font-size: 95%;"><strong>Fonds : </strong>'. $_SESSION['Fonds'] .'</div>
 			');
 			}
+			echo('<script>if (Modernizr.touch)){
+var snapper = new Snap({element: document.getElementById(\'content\')});
+var lien_css = document.createElement(\'link\');
+lien_css.setAttribute("href","mobile.css");
+lien_css.setAttribute("rel","stylesheet");
+lien_css.setAttribute("type","text/css");
+document.getElementsByTagName("head").item(0).appendChild(lien_css);
+}</script>');
 			echo("<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
