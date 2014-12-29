@@ -167,7 +167,7 @@ class vote // La zolie classe de vote
 		}
 		else
 		{
-			$average = 'Empty';
+			$average = NULL;
 		}
 		return $average;
 	}
@@ -189,5 +189,73 @@ class vote // La zolie classe de vote
 	}
 }
 
-
+class search
+{
+	private Hangar;
+	
+	public function __construct(hangar $hangar) // On set le hangar dès le début, quand même
+	{
+		$this->Hangar = $hangar;
+	}
+	
+	public function Category($categ)
+	{
+		$BDD = $this->Hangar->getDB();
+		$req = $BDD->prepare('SELECT ID FROM publications WHERE Categ = ? ORDER BY ID DESC');
+		$req->execute(array($categ));
+		$rep;
+		$i = 0;
+		while($data = $req->fetch())
+		{
+			$rep[$i] = $data['ID'];
+			$i++;
+		}
+		return $rep;
+	}
+	
+	public function Author($author)
+	{
+		$BDD = $this->Hangar->getDB();
+		$req = $BDD->prepare('SELECT ID FROM publications WHERE Auteur = ? ORDER BY ID DESC');
+		$req->execute(array($author));
+		$rep;
+		$i = 0;
+		while($data = $req->fetch())
+		{
+			$rep[$i] = $data['ID'];
+			$i++;
+		}
+		return $rep;
+	}
+	
+	public function Modded($modded)
+	{
+		$BDD = $this->Hangar->getDB();
+		$req = $BDD->prepare('SELECT ID FROM publications WHERE MODV = ? ORDER BY ID DESC');
+		$req->execute(array($modded));
+		$rep;
+		$i = 0;
+		while($data = $req->fetch())
+		{
+			$rep[$i] = $data['ID'];
+			$i++;
+		}
+		return $rep;
+	}
+	
+	public function Subbassembly($subassembly)
+	{
+		$BDD = $this->Hangar->getDB();
+		$req = $BDD->prepare('SELECT ID FROM publications WHERE SUB = ?');
+		$req->execute(array($subassembly));
+		$rep;
+		$i = 0;
+		while($data = $req->fetch())
+		{
+			$rep[$i] = $data['ID'];
+			$i++;
+		}
+		return $rep;
+	}
+}
 ?>

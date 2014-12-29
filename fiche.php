@@ -27,7 +27,7 @@ if(isset($_GET['ID']))
 		function basicVote($votes)
 		{
 			$average = $votes->getAverage();
-			if($average != 'Empty')
+			if($average != NULL)
 			{
 				$green = $average * 100;
 				$red = 100 - $green;
@@ -62,7 +62,7 @@ if(isset($_GET['ID']))
 			elseif($_SESSION['Utilisateur'] != $data['Auteur'])
 			{
 				$average = $votes->getAverage();
-				if($average == 'Empty'){$average = 0.5; $empty = 1;}
+				if($average == NULL){$average = 0.5; $empty = 1;}
 				else{$empty = 0;}
 				$green = $average * 100;
 				$red = 100 - $green;
