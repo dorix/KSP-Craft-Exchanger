@@ -51,6 +51,30 @@ ul
 {
     list-style-type: none;
 }
+@media screen and (max-width: 1120px){
+.menu
+{
+	float: left;
+	position: fixed;
+	background-color: #303030;
+	color: #F0F0F0;
+	padding-top: 55px;
+	height: 100%;
+	width: 187px;
+	background-repeat: repeat-y;
+	z-index:9;
+}
+section
+{
+	padding-left: 196px;
+	margin-left: 196px;
+	padding-right: 1%;
+	margin-right: 1%;
+	padding-top: 60px;
+}
+}
+
+@media screen and (max-width: 1300px) and (min-width : 1120px) {
 .menu
 {
 	float: left;
@@ -61,14 +85,7 @@ ul
 	height: 100%;
 	width: 16.66%;
 	background-repeat: repeat-y;
-}
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+	z-index:9;
 }
 section
 {
@@ -77,6 +94,38 @@ section
 	padding-right: 1%;
 	margin-right: 1%;
 	padding-top: 60px;
+}
+}
+
+@media screen and (min-width: 1300px) {
+.menu
+{
+	float: left;
+	position: fixed;
+	background-color: #303030;
+	color: #F0F0F0;
+	padding-top: 55px;
+	height: 100%;
+	width: 217px;
+	background-repeat: repeat-y;
+	z-index:9;
+}
+section
+{
+	padding-left: 228px;
+	margin-left: 228px;
+	padding-right: 1%;
+	margin-right: 1%;
+	padding-top: 60px;
+}
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 a.up
 {
