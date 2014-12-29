@@ -191,7 +191,7 @@ class vote // La zolie classe de vote
 
 class search
 {
-	private Hangar;
+	private $Hangar;
 	
 	public function __construct(hangar $hangar) // On set le hangar dès le début, quand même
 	{
