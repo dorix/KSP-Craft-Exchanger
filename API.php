@@ -203,7 +203,7 @@ class search
 		$BDD = $this->Hangar->getDB();
 		$req = $BDD->prepare('SELECT ID FROM publications WHERE Categ = ? ORDER BY ID DESC');
 		$req->execute(array($categ));
-		$rep;
+		$rep = array();
 		$i = 0;
 		while($data = $req->fetch())
 		{
