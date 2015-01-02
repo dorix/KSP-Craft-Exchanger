@@ -1,6 +1,7 @@
 <?php include('fixe.php');
+include('API.php');
 echo('<section class="col-xs-10">');
-if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && isset($_POST['categ']) && isset($_FILES['craft']) && isset($_FILES['image']) && $_FILES['craft']['error'] == 0 && $_FILES['image']['error'] == 0)
+if(isset($_POST['MDP']) && isset($_POST['DescCom']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset($_POST['Name']) && isset($_POST['Desc']) && isset($_POST['Prix']) && isset($_POST['categ']) && isset($_FILES['craft']) && isset($_FILES['image']) && $_FILES['craft']['error'] == 0 && $_FILES['image']['error'] == 0)
 {
 	$nom = strip_tags($_POST['Name']); // Definition des variables
 	$MDP = strip_tags($_POST['MDP']);
@@ -9,6 +10,7 @@ if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset
 	$prix = $_POST['Prix'];
 	$categ = $_POST['categ'];
 	$desc = strip_tags($_POST['Desc']);
+	$advdesc = $_POST['DescCom'];
 	$craftinfo = pathinfo($_FILES['craft']['name']);
 	$extcraft = $craftinfo['extension'];
 	$imginfo = pathinfo($_FILES['image']['name']);
@@ -17,6 +19,7 @@ if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset
 	 // Verification sur la bdd
 	include('BDD.php');
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$CE = new hangar($bdd,'KSP-CE');
 	$req = $bdd->prepare('SELECT Nom FROM publications WHERE Nom = ?');
 	$req->execute(array($nom));
 	$data = $req->fetch();
@@ -30,6 +33,8 @@ if(isset($_POST['MDP']) && isset($_POST['MOD']) && isset($_POST['SUB']) && isset
 		$req2 = $bdd->prepare('SELECT * FROM publications WHERE Nom = ?');
 		$req2->execute(array($nom));
 		$data2 = $req2->fetch();
+		$ADVdesc = new advancedDescription($CE);
+		$ADVdesc->push($data2['ID'], $advdesc);
 		echo('<h2>Création ajoutée à notre catalogue.</h2><p>Le lien public de téléchargement sans compte est : http://kspce.olympe.in/dlnomember?ID='.$data2['ID'].'&MDP='.$data2['MDP'].'</p>');
 		
 	}

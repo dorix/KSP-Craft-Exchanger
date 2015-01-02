@@ -93,11 +93,13 @@ if(isset($_GET['ID']))
 		{
 			$votesystem = basicVote($votes);
 		}
-		
+		$ADVdesc = new advancedDescription($CE);
+		$ADVdesc->pull($_GET['ID']);
+		$HTMLadvDesc = $ADVdesc->toHtml();
 		echo('<p><h1>'.$data['Nom'].'</h1><div class="table-responsive"><table class="table table-bordered fiche"><tbody>');
 		echo('<tr><td class="col-sm-8"><img src="publications/'.$data['Nom'].'.'.$data['ImgExt'].'" class="img-responsive"></td><td class="col-sm-3"><strong>Description : </strong>'.$data['Descr'].'</td></tr>');
 		echo('<tr><td><strong>Auteur : </strong>'.$data['Auteur'].'</td><td><strong>Prix : </strong>'.$data['Prix'].'</td></tr>');
-		echo('<tr><td></td><td><strong>Votes : </strong>'.$votesystem.'</td></tr>');
+		echo('<tr><td>'.$HTMLadvDesc.'</td><td><strong>Votes : </strong>'.$votesystem.'</td></tr>');
 		echo('<tr><td><strong>Type : </strong>'.$data['MODV'].', '.$data['SUB'].'</td><td>'.$dlstring.'</td></tr>');
 		echo('</tbody></table></div></p>');
 	}

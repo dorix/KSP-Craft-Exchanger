@@ -8,10 +8,17 @@
 		<link rel="alternate" href="kspce.olympe.in" hreflang="fr-fr" />
 		<script src="bootstrap/js/jquery-2.1.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="http://cdn.wysibb.com/js/jquery.wysibb.min.js"></script>
+		<link rel="stylesheet" href="http://cdn.wysibb.com/css/default/wbbtheme.css" />
         <title>KSP craft exchanger - Site d'échange de craft KSP communautaire - <?php echo($_SERVER['PHP_SELF']); ?></title>
 		<meta name="google-site-verification" content="FtVGZDKKOgRibEVbSdlDaQ8zGCWyGzwOiEsYTmpM7Uk" />
 		<script src="snap.js"></script>
 		<script src="modernizr.js"></script>
+		<script>
+			$(function() {
+			$("#editor").wysibb();
+			})
+		</script>
     </head>
 
     <body>

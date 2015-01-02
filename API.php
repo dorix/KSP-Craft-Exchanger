@@ -1,4 +1,5 @@
 <?php
+require "bbcode.php";
 class hangar // Cet objet est unique par hangar, il servira à donner certaines informations spécifiques pour certains usages et à fournir la base de donnée.
 {
 	private $PDO;
@@ -186,6 +187,52 @@ class vote // La zolie classe de vote
 		{
 			return True;
 		}
+	}
+}
+class advancedDescription
+{
+	private $Hangar;
+	private $Content;
+	
+	public function __construct(hangar $hangar)
+	{
+		$this->Hangar = $hangar;
+	}
+	public function push($ID, $Content) // On envoie la publication sur la bdd et le serveur
+	{
+		$BDD = $this->Hangar->getDB();
+		$Request = $BDD->prepare('SELECT * FROM advDesc WHERE IDpub = ?'); // Vérification de si le nom existe déjà
+		$Request->execute(array($ID));
+		$data = $Request->fetch();
+		if($data['Content'] == '')
+		{
+			$Request->closeCursor();
+			$Request = $BDD->prepare("INSERT INTO advDesc(ID, IDpub, Content) VALUES('', ? , ?)"); // On ajoute tout ca dans la BDD
+			$Request->execute(array($ID, $Content));
+			return $Content;
+		}
+		else
+		{
+			$Request->closeCursor();
+			return "Error : Already exist"; // Petit retour d'erreur, au cas où
+		}
+	}
+	
+	public function pull($id)
+	{
+		$BDD = $this->Hangar->getDB();
+		$Request = $BDD->prepare('SELECT * FROM advDesc WHERE IDpub = ?');
+		$Request->execute(array($id));
+		$data = $Request->fetch();
+		$this->Content= $data['Content'];
+		$Request->closeCursor();
+		return $this->Content;
+	}
+	
+	public function toHtml()
+	{
+		$bbcode = new BBCode;
+		return $bbcode->toHTML($this->Content);
 	}
 }
 

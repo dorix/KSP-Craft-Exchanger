@@ -5,7 +5,7 @@
 		<section class="col-xs-10">
 			<h1>Publier</h1>
 			<p>Publiez votre création et récoltez des fonds !</p>
-			<form class="form-horizontal" role="form" action="upload.php" method="post" enctype="multipart/form-data">
+			<form class="form-horizontal" role="form" action="upload.php" method="post" enctype="multipart/form-data" id="target">
 				<div class="form-group">
 					<label for="Name" class="col-sm-3 control-label">Nom : </label>
 					<div class="col-sm-5">
@@ -54,9 +54,15 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="Desc" class="col-sm-3 control-label">Description : </label>
+					<label for="Desc" class="col-sm-3 control-label">Description courte : </label>
 					<div class="col-sm-5">
 						<textarea class="form-control" name="Desc" id="Desc" required></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="editor" class="col-sm-3 control-label">Description complète : </label>
+					<div class="col-sm-8">
+						<textarea class="form-control" name="DescCom" id="editor" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -79,9 +85,14 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-1">
-						<button type="submit" class="btn btn-primary" name="inscr" id="inscr">Publier</button>
+						<button type="submit" class="btn btn-primary" name="inscr-btn" id="inscr-btn">Publier</button>
 					</div>
 				</div>
+				<script>
+					$( "#inscr-btn" ).click(function() {
+					$( "#target" ).submit();
+					});
+				</script>
 		</section>');
 	}
 include('fin.php'); ?>
